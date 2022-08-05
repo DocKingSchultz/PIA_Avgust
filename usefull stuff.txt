@@ -1,0 +1,9 @@
+1) Converting Dates :
+    https://www.delftstack.com/howto/angular/angular-date-format/
+    Using DatePipe class
+
+2) Best way to create array of some Class objects :
+    type articles = Array <{idArticle:number; name:string}>
+    This way we actually cratee class inside the template, at the place.
+    Usefull if we dont want to create new class in models
+    More about arrays : https://www.delftstack.com/howto/angular/array-of-objects-in-angular/

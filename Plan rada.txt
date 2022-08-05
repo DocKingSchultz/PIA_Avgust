@@ -1,0 +1,73 @@
+PIA :
+	Npraviti novi projekat
+	Npraviti komponentu za login
+	Npraviti home komponentu
+	Ubaciti footer
+	Ubaciti tabove karticne
+	Nporaviti novi folder sa komponentama :
+											forma za popunjavanje, responzivna
+											tabela za ispis podataka
+											tabela sa searchom
+											karticna stranica (kao sto je bila forma za popunjavanje podataka)
+											tabela paginacija
+											-Ubaaciti nvedene komponente u jedan notepad, koji ce biti u folderu, sa izvorom odakle je skinuto
+	Npraviti promenu lozinke komponentu
+	Npraviti registraciju komponentu
+	Instalirati mongoDB compas
+	Npraviti model na frontu za usera, sa usernameom i passwordom
+	Npraviti kolekciju usera u Compasu
+	Inicijalizvoati server
+	Npraviti user router
+	Napraviti user model na backu
+	Npraviti user controller
+	Npraviti u registraciji da moze da se doda slicica
+	Npraviti da polja logina budu required
+	Postaviti da registracija ima unos za svaki tip podataka :
+																Input number
+																Input text
+																Input password
+																Input email
+																Checkbox
+																Radiobutton
+																Slicica
+																Padajuca lista
+	Npraviti folder za skripte
+	Npraviti metodu boolean checkIfAllFilled() : koja proverava da li su svi elementi forme koji imaju reuqired kljucnu rec popunjeni
+	Npraviti token generator za admina
+	Dinamicno ddovanje polja u bazu (ziro racuhn, kase i sl.)
+
+export class dataMock 
+{
+    ID = 0
+    username = ""
+    password = ""
+    email = ""
+    date = Date()
+    isSomething = false
+    arrayData = 
+    [
+        {idArticle:1, name:"Coca Cola"},
+        {idArticle:2, name:"Coca Cola"},
+        {idArticle:3, name:"Coca Cola"},
+        {idArticle:4, name:"Coca Cola"},
+        {idArticle:5, name:"Coca Cola"},
+        {idArticle:6, name:"Coca Cola"},
+        {idArticle:7, name:"Coca Cola"},
+        {idArticle:8, name:"Coca Cola"},
+        {idArticle:9, name:"Coca Cola"},
+        {idArticle:10, name:"Coca Cola"},
+        {idArticle:11, name:"Coca Cola"},
+        {idArticle:12, name:"Coca Cola"},
+        {idArticle:13, name:"Coca Cola"},
+        {idArticle:14, name:"Coca Cola"},
+        {idArticle:15, name:"Coca Cola"},
+        {idArticle:16, name:"Coca Cola"},
+    ]
+}
+	
+																
+																
+
+	
+	
+	
