@@ -1,1 +1,78 @@
-<p>registration works!</p>
+<div class="container" style="max-width: 700px;" id="insertCompanyForm">
+    <h3 class="mb-5">Form title</h3>
+    <form action="action_page.php" id="registerForm">
+        <div class="row">
+            <div class="col-25">
+                <label for="fname">Korisnicko ime</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="username" name="username" [(ngModel)]='req.username' placeholder="Korisnicko ime.." required>
+            </div>
+        </div>
+
+        <div class="row">
+         <div class="col-25">
+             <label for="fname">Lozinka</label>
+         </div>
+         <div class="col-75">
+             <input type="password" id="Password" name="Password" [(ngModel)]='req.password' placeholder="Lozinka.." required>
+         </div>
+     </div>
+
+     <div class="row">
+      <div class="col-25">
+          <label for="fname">Potvdra lozinke</label>
+      </div>
+      <div class="col-75">
+          <input type="password" id="Passwordconf" name="Passwordconf" [(ngModel)]='req.passwordConfirmed' placeholder="Potvrda.." required>
+      </div>
+  </div>
+
+         <div class="row">
+            <div class="col-25">
+               <label for="fname">Broj Telefona</label>
+            </div>
+            <div class="col-75">
+               <input type="number" id="phone" name="phone" [(ngModel)]='req.phone' placeholder="Broj .."  required>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-25">
+                <label for="fname">Ime</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="name" name="name" [(ngModel)]='req.name' placeholder="Ime.." required>
+            </div>
+        </div>
+        <div class="row">
+         <div class="col-25">
+             <label for="fname">Prezime</label>
+         </div>
+         <div class="col-75">
+             <input type="text" id="lastname" name="lastname" [(ngModel)]='req.lastname' placeholder="Prezime.." required>
+         </div>
+     </div>
+
+     <div class="row">
+      <div class="col-25">
+          <label for="fname">Adresa</label>
+      </div>
+      <div class="col-75">
+          <input type="text" id="address" name="address" [(ngModel)]='req.address' placeholder="Adresa.." required>
+      </div>
+  </div>
+  <div class="row">
+   <div class="col-25">
+       <label for="fname">Email adresa</label>
+   </div>
+   <div class="col-75">
+       <input type="text" id="email" name="email" [(ngModel)]='req.email' placeholder="Email.." required>
+   </div>
+</div>
+
+        <div class="row">
+            <input type="submit" value="Potvrdi" (click)="registration()">
+        </div>
+
+    </form>
+</div>

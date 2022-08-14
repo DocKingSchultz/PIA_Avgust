@@ -120,6 +120,52 @@
 
 </head>
 
+<script>
+      function checkIfAllFieldsAreFilled(formName) {
+      let allAreFilled = true;
+      document.getElementById(formName).querySelectorAll("[required]").forEach(function (i) {
+        if (!allAreFilled) return true;
+        if (i.type === "radio") {
+          let radioValueCheck = false;
+          document.getElementById("myForm").querySelectorAll(`[name=${i.name}]`).forEach(function (r) {
+            if (r.checked) radioValueCheck = true;
+          })
+          allAreFilled = radioValueCheck;
+          return true;
+        }
+        if (!i.value) { allAreFilled = false; return true; }
+      })
+      if (!allAreFilled) {
+        alert('Popuni sva polja');
+        return false;
+      }
+      return true;
+    }
+
+    function checkPasswordRegularity(password) {
+      if (!password.match(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,12}$/)) {
+        alert('Lozinka mora pocinjati slovom, imati od 8-12 karaktera, i posedovati bar po jedan specijalni karakter, broj i slovo');
+        return false;
+      }
+      return true;
+    }
+    function checkPasswordEqality(oldpass, typedpass) {
+      if (oldpass != typedpass) {
+        alert("Pogresno uenta stara lozinka")
+        return false;
+      }
+      return true;
+    }
+
+    function checkPasswordMatching(pass, confpass) {
+      if (pass == confpass) {
+        return true;
+      }
+      alert("Unete lozinke se ne poklapaju")
+      return false;
+    }
+</script>
+
 <body>
   <app-root></app-root>
 </body>
