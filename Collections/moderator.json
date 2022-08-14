@@ -1,0 +1,8 @@
+[{
+  "_id": {
+    "$oid": "62f90a2faef5e6cbeb264d60"
+  },
+  "username": "moderator",
+  "password": "Cofa097#",
+  "type": "moderator"
+}]
