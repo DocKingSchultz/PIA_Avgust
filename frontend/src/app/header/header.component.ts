@@ -45,22 +45,5 @@ export class HeaderComponent implements OnInit {
     this.page = this.routr.url
     this.routr.navigate(["login"])
   }
-  generateToken() {
-    let chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    let length = 10
-    var result = '';
-    var user = localStorage.getItem("user")
-    for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
-    if (user != null) {
-      this.servisKorisnik.createNewToken(result,JSON.parse(user).username).subscribe((mess: any) => {
-        if (mess) {
-          alert("Your new generated key is :" + result)
-        }
-        else {
-          alert("Key cant be generated in this moment :")
-        }
-      })
-    }
 
-  }
 }

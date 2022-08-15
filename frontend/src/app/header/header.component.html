@@ -1,19 +1,8 @@
-<div class="topnav" id="myTopnav" *ngIf="user!=null && page!='login' && page!='/' && page!=''">
-    <a href="registrationRequests" *ngIf="user.type=='admin'">Zahtevi za registracijom</a>   
-    <a href="changePass" >Promeni lozinku</a>
-    <a href="logout" >Logout</a>   
-    <a role="button" (click)="generateToken()" *ngIf = "user.type=='admin'">Generate new token</a> 
-    <a href="javascript:void(0);" class="icon" onclick="navBarFunction()">
-        <i class="fa fa-bars"></i>
-    </a>
-</div>
-
-<div class="topnav" id="myTopnav" *ngIf="page=='login' || page=='/' || page!=''">
+<div class="topnav" id="myTopnav" >
     <a href="login" >Prijava na sistem</a>
     <a href="bestBooks" >Najpopularnije knjige</a>
-    <a href="homeBookSearch" >Pretraga dostupnih knjiga</a>
+    <a href="homeBookSearch" >Pretrazi dostupne knjige</a>
     <a href="javascript:void(0);" class="icon" onclick="navBarFunction()">
         <i class="fa fa-bars"></i>
     </a>
 </div>
-

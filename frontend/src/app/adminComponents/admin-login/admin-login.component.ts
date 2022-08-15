@@ -27,7 +27,7 @@ export class AdminLoginComponent implements OnInit {
       }
       else{
         localStorage.setItem("user", JSON.stringify(data))
-        this.ruter.navigate(['header']);
+        this.ruter.navigate(['admin']);
       }
     })
   }

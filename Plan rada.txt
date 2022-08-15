@@ -1,73 +1,92 @@
-PIA :
-	Npraviti novi projekat
-	Npraviti komponentu za login
-	Npraviti home komponentu
-	Ubaciti footer
-	Ubaciti tabove karticne
-	Nporaviti novi folder sa komponentama :
-											forma za popunjavanje, responzivna
-											tabela za ispis podataka
-											tabela sa searchom
-											karticna stranica (kao sto je bila forma za popunjavanje podataka)
-											tabela paginacija
-											-Ubaaciti nvedene komponente u jedan notepad, koji ce biti u folderu, sa izvorom odakle je skinuto
-	Npraviti promenu lozinke komponentu
-	Npraviti registraciju komponentu
-	Instalirati mongoDB compas
-	Npraviti model na frontu za usera, sa usernameom i passwordom
-	Npraviti kolekciju usera u Compasu
-	Inicijalizvoati server
-	Npraviti user router
-	Napraviti user model na backu
-	Npraviti user controller
-	Npraviti u registraciji da moze da se doda slicica
-	Npraviti da polja logina budu required
-	Postaviti da registracija ima unos za svaki tip podataka :
-																Input number
-																Input text
-																Input password
-																Input email
-																Checkbox
-																Radiobutton
-																Slicica
-																Padajuca lista
-	Npraviti folder za skripte
-	Npraviti metodu boolean checkIfAllFilled() : koja proverava da li su svi elementi forme koji imaju reuqired kljucnu rec popunjeni
-	Npraviti token generator za admina
-	Dinamicno ddovanje polja u bazu (ziro racuhn, kase i sl.)
+1. Admin :
+	Npraviti izlistavanje regReqs, sa aktivacijom i deaktivacijom
+	Testirati kako radi
 
-export class dataMock 
-{
-    ID = 0
-    username = ""
-    password = ""
-    email = ""
-    date = Date()
-    isSomething = false
-    arrayData = 
-    [
-        {idArticle:1, name:"Coca Cola"},
-        {idArticle:2, name:"Coca Cola"},
-        {idArticle:3, name:"Coca Cola"},
-        {idArticle:4, name:"Coca Cola"},
-        {idArticle:5, name:"Coca Cola"},
-        {idArticle:6, name:"Coca Cola"},
-        {idArticle:7, name:"Coca Cola"},
-        {idArticle:8, name:"Coca Cola"},
-        {idArticle:9, name:"Coca Cola"},
-        {idArticle:10, name:"Coca Cola"},
-        {idArticle:11, name:"Coca Cola"},
-        {idArticle:12, name:"Coca Cola"},
-        {idArticle:13, name:"Coca Cola"},
-        {idArticle:14, name:"Coca Cola"},
-        {idArticle:15, name:"Coca Cola"},
-        {idArticle:16, name:"Coca Cola"},
-    ]
-}
+2. Npraviti button izmena Citaoca
+	Npraviti da se ispod ispise forma kao za registraciju, samo dodati isModerator checkbox
+	Postaviti alert dugme za potvrdu
+
+3. Ubaciti slicicu bilu kakvu u gornjem uglu menija (pogledati srazmere slike)
+	psotaviti da bude podrazumevana
+
+4. Porvaliti kako da ubacis slicice
+
+5. Ubaciti azuriranje slicice u regreqs
 	
-																
-																
+6. Ubaciti da slicica bude u meniju
+
+7. Citaoc, profil 
+	kada kliknes na slicicu profila, otvaraju se informacije o korisniku,
+	samo izbacis formu sa informacijama (bez azuriranja)
+
+8. Ubaciti knjigu u back/front/bazu :
+	ID knjige
+	naziv knjige
+	autori
+	zanr
+	izdavac
+	godina izdavanja
+	jezik
+	slika korice
+
+9. Moderator :
+	isto sto i citaoc
+	dodatno dugme ubaci knjigu u sistem
+
+10. Azuiranje knjige u sistemu :
+	ispisu se sve knjige i pored ima dugme azuriraj
+	otvara se forma za azuiranje ista kao za ubacivanje
+	SVAKO POLJE mora biti promenjeno ako se azurira
+
+
+
+11. Napraviti pretragu neregistrovanom korisniku knjiga
+	pretraga po (nazivu, autorima, pretraga sa delimicnim poklapanjem)
+	samo izlistane osnovne infromacije o knjizi (info iz baze)
+
+12. Ubaciti istu tabelu u registrovane korisnike, samo dodati dugme detalji
+
+13. Dodati u meniju citaocu :
+	pregled zaduzenih knjiga
+	istorija zaduzenja 
+
+14. Dodati citaocu polja u front mdeol/bacl model/baza
+	*obraitti paznju sta ces cuvati u ovim delovima (jer ti trebaju ddoatne ifnromacije, ako sto je datum uzeta knjige ili vracene i sl.)
+	trenutno zaduzene knjige, currTakenBooks
+	istorija zaduzenja, historyBooks
+	Array Books[]
+
+15. Zaduzene knjige :
+	Iskopriati iz prethodnog projekta karticnu reprezentaciju
+	Ukoliko nema knjige prikazati slobodna kartica
+	Prikazati osnovne informacije knjige i ispod prikazati koliko je ostalo dana za vracanje
+	Dugme za detalje o knjizi
+	Dugme za vracanje knjige
+	Ukoliko je rok istekao ispisati koliko je dana preko roka u crvenoj boji
+
+16. Istorija zaduzenih knjiga :
+	Ispis zaduzenih knjiga(naziv knjige, autori, datum zaduzivanja, datum vracanja, dugme za dodatne ifnormacije)
+	Sortiranje knjiga po svim parametrima (naziv knjige, autori (samo po prezimenu prvog autora), datum zaduzivanja, datum vracanja)
+	Inicijalno je sortirana po datumu vracanja od najskorije vracene knjige (znaci datum vracanja knjige, opadajuce)
+
+17. Detalji o knjizi :
+	...
+	
+
 
 	
-	
-	
+
+Testiranje provere :
+	1. Proveriti da li postoji poruka pri prijavi na sistem
+	2. Proveriti registraciju :
+		Da li se baca poruka za nepopunjena polja
+		Da li ej sifra po zahtevima :
+			8-12
+			jedno veliko slovo
+			jedan broj
+			jedan karatker
+			mora pocinjati slovom
+			(proveirti ako ne ubacis malo slovo, ako pocnes malim slovom)
+		Slicica nije required, ako nije uneta ubaciti podrazumevanu mock slicicu
+	3. 
+			

@@ -11,7 +11,7 @@ declare function checkIfAllFieldsAreFilled(pass:string):boolean;
 })
 export class SignInComponent implements OnInit {
 
-  constructor(private serv:UserServiceService, private ruter:Router) { }
+  constructor(private serv:UserServiceService, private ruter:Router) {localStorage.clear() }
 
   ngOnInit(): void {
     localStorage.clear()
