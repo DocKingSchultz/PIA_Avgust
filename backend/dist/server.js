@@ -25,4 +25,6 @@ router.route('/adminLogin').post((req, res) => new userController_1.userControll
 router.route('/createNewToken').post((req, res) => new userController_1.userController().createNewToken(req, res));
 router.route('/changePassword').post((req, res) => new userController_1.userController().changePassword(req, res));
 router.route('/makeRegistrationRequest').post((req, res) => new userController_1.userController().makeRegistrationRequest(req, res));
+router.route('/getAllRegistrationRequests').post((req, res) => new userController_1.userController().getAllRegistrationRequests(req, res));
+router.route('/changeAccStatus').post((req, res) => new userController_1.userController().changeAccStatus(req, res));
 //# sourceMappingURL=server.js.map

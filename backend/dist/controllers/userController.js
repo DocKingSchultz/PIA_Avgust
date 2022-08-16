@@ -12,6 +12,15 @@ const admin_1 = __importDefault(require("../models/admin"));
 const regreq_1 = __importDefault(require("../models/regreq"));
 class userController {
     constructor() {
+        this.getAllRegistrationRequests = (req, res) => {
+            regreq_1.default.find({}, (err, reqs) => {
+                if (err)
+                    console.log("getting reg requests error :" + err);
+                else {
+                    res.json(reqs);
+                }
+            });
+        };
         this.login = (req, res) => {
             let username = req.body.username;
             let password = req.body.password;
@@ -133,6 +142,41 @@ class userController {
                 }
                 else
                     res.json({ 'message': 'Korisnik sa unetim podacima vec postoji u sistemu' });
+            });
+        };
+        this.changeAccStatus = (req, res) => {
+            let regReq = req.body.req;
+            let username = regReq.username;
+            let status = req.body.status;
+            regreq_1.default.findOneAndUpdate({ "username": username }, { "status": status }, (err, res) => {
+                if (err)
+                    throw (err);
+                else {
+                    reader_1.default.findOne({ "username": username }, (err, res) => {
+                        if (err)
+                            throw (err);
+                        else {
+                            if (res) {
+                                reader_1.default.deleteOne({ "username": username }, (err) => {
+                                }).clone().catch(err => {
+                                    if (err) {
+                                        console.log("Greska pri deaktiviranju naloga Citaoca Admin/changeAccStatus : " + err);
+                                    }
+                                });
+                            }
+                            else {
+                                let comp = new reader_1.default(regReq);
+                                comp.status = status;
+                                if (status == 'aktivan') {
+                                    comp.save(function (err) {
+                                        if (err)
+                                            throw (err);
+                                    });
+                                }
+                            }
+                        }
+                    });
+                }
             });
         };
     }

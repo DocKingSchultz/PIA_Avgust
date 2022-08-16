@@ -12,6 +12,7 @@ export class UserServiceService {
 
   uri = 'http://localhost:4000';
 
+  
   login(username:string, password:string){
     const data = {
       username:username,
@@ -57,6 +58,22 @@ export class UserServiceService {
   regitration(req:RegReq)
   {
     return this.http.post(`${this.uri}/makeRegistrationRequest`, req);
+  }
+
+  getAllRegReqs() {
+    const data = {
+
+    }
+    return this.http.post(`${this.uri}/getAllRegistrationRequests`,data)
+  }
+
+  changeAccStatus(req:RegReq, status:string)
+  {
+    const data = {
+      req:req,
+      status:status
+    }
+    return this.http.post(`${this.uri}/changeAccStatus`,data)
   }
 
 }

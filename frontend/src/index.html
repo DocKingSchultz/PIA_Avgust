@@ -143,8 +143,8 @@
     }
 
     function checkPasswordRegularity(password) {
-      if (!password.match(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,12}$/)) {
-        alert('Lozinka mora pocinjati slovom, imati od 8-12 karaktera, i posedovati bar po jedan specijalni karakter, broj i slovo');
+      if (!password.match(/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,12}$/)) {
+        alert('Lozinka mora pocinjati velikim slovom, imati od 8-12 karaktera, i posedovati bar po jedan specijalni karakter, broj i slovo');
         return false;
       }
       return true;

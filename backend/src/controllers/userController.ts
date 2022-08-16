@@ -5,9 +5,19 @@ import Reader from '../models/reader';
 import User from '../models/users';
 import Admin from '../models/admin';
 import RegReq from '../models/regreq';
+import { Request, Response } from 'express-serve-static-core';
+import { ParsedQs } from 'qs';
 
 export class userController
 {
+    getAllRegistrationRequests = (req: express.Request, res: express.Response) => {
+        RegReq.find({}, (err, reqs) => {
+            if (err) console.log("getting reg requests error :" + err)
+            else {
+                res.json(reqs)
+            }
+        })
+    }
     login = (req: express.Request, res: express.Response)=>{
         let username = req.body.username;
         let password = req.body.password;
@@ -150,6 +160,47 @@ export class userController
             }else res.json({'message':'Korisnik sa unetim podacima vec postoji u sistemu'})
         })
         
+    }
+
+    changeAccStatus = (req: express.Request, res: express.Response) => {
+        let regReq = req.body.req;
+        let username = regReq.username
+        let status = req.body.status;
+        RegReq.findOneAndUpdate({ "username": username }, { "status": status }, (err, res) => {
+            if(err)throw(err)
+            else {
+                Reader.findOne({ "username": username }, (err, res) => {
+
+                    if(err)throw(err)
+                    else {
+                        if (res) {
+
+                            Reader.deleteOne({ "username": username }, (err) => {
+
+                            }).clone().catch(err => {
+                                if (err) {
+                                    console.log("Greska pri deaktiviranju naloga Citaoca Admin/changeAccStatus : " + err)
+                                }
+                            });
+
+                        }
+                        else {
+                            let comp = new Reader(regReq)
+                            comp.status = status;
+                            if (status == 'aktivan') {
+                                comp.save(function (err) {
+                                    if(err)throw(err)
+                                });
+                            }
+
+
+                        }
+                    }
+                });
+
+            }
+        });
+
     }
     
 }

@@ -45,3 +45,10 @@ router.route('/changePassword').post(
 router.route('/makeRegistrationRequest').post(
     (req, res)=>new userController().makeRegistrationRequest(req, res)
 )
+router.route('/getAllRegistrationRequests').post(
+    (req, res)=>new userController().getAllRegistrationRequests(req, res)
+)
+
+router.route('/changeAccStatus').post(
+    (req, res)=>new userController().changeAccStatus(req, res)
+);

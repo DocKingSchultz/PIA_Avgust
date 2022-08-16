@@ -9,5 +9,5 @@ export class RegReq{
     phone:number;
     email:string;
     picture:string;
-    status:"neaktivan"
+    status:string
 }

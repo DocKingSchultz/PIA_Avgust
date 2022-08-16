@@ -1,1 +1,38 @@
-<p>registration-requests works!</p>
+<div class="topnav" id="myTopnav" >
+    <a href="registrationRequests" >Zahtevi za registracijom</a>
+    <a href="changePass" >Promeni lozinku</a>
+    <a href="logout" >Logout</a>   
+    <a role="button" (click)="generateToken()" >Generate new token</a> 
+    <a href="javascript:void(0);" class="icon" onclick="navBarFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+<div style="overflow-x:auto; ">
+    <table table class="center">
+      <tr>
+        <th>Ime i prezime</th>
+        <th>Tip naloga</th>
+        <th>Status naloga</th>
+        <th></th>
+        
+      </tr>
+      <tr *ngFor = 'let req of regReqs'>
+        <td>{{req.name}} {{req.lastname}}</td>
+        <td>{{req.status}}</td>
+        <td *ngIf="req.status=='neaktivan'">
+            <button class="button" (click)="changeAccStatus(req, 'aktivan')" >Aktiviraj nalog</button>
+        </td>
+        <td *ngIf="req.status=='aktivan'">
+            <button class="button" (click)="changeAccStatus(req, 'neaktivan')" >Deaktiviraj nalog</button>
+        </td>   
+        <td >
+            <button class="button" disabled>Izmeni informacije</button>
+        </td>  
+        <!-- <td >
+            <button class="button" disabled>Izmeni informacije</button>
+        </td>   -->
+     </tr>
+    </table>
+  </div>
+
+
