@@ -148,16 +148,17 @@ class userController {
             let regReq = req.body.req;
             let username = regReq.username;
             let status = req.body.status;
-            regreq_1.default.findOneAndUpdate({ "username": username }, { "status": status }, (err, res) => {
+            regreq_1.default.findOneAndUpdate({ "username": username }, { "status": status }, (err, res2) => {
                 if (err)
                     throw (err);
                 else {
-                    reader_1.default.findOne({ "username": username }, (err, res) => {
+                    reader_1.default.findOne({ "username": username }, (err, res3) => {
                         if (err)
                             throw (err);
                         else {
-                            if (res) {
+                            if (res3) {
                                 reader_1.default.deleteOne({ "username": username }, (err) => {
+                                    res.json("succ");
                                 }).clone().catch(err => {
                                     if (err) {
                                         console.log("Greska pri deaktiviranju naloga Citaoca Admin/changeAccStatus : " + err);
@@ -171,6 +172,9 @@ class userController {
                                     comp.save(function (err) {
                                         if (err)
                                             throw (err);
+                                        else {
+                                            res.json("succ");
+                                        }
                                     });
                                 }
                             }

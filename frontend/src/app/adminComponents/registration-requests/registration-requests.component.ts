@@ -10,7 +10,8 @@ import { RegReq } from 'src/models/regReq';
 })
 export class RegistrationRequestsComponent implements OnInit {
 
-  constructor(private routr:Router, private servisKorisnik: UserServiceService) { }
+  constructor(private routr:Router, private servisKorisnik: UserServiceService) {
+   }
 
   ngOnInit(): void {
     this.servisKorisnik.getAllRegReqs().subscribe((reqs:any)=>{
@@ -42,9 +43,15 @@ export class RegistrationRequestsComponent implements OnInit {
   changeAccStatus(req:RegReq, status:string)
   {
     this.servisKorisnik.changeAccStatus(req, status).subscribe((mss:any)=>{
+      window.location.reload()
+    });
+    
+    
+  }
 
-    })
-    this.routr.navigate(["adminRegReq"])
+  logout(){
+    localStorage.removeItem('user');
+    localStorage.clear();
   }
 
 }
