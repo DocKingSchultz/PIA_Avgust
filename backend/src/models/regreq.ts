@@ -10,7 +10,7 @@ let RegReq = new Schema({
         type: String
     },
     type:{
-        type: String
+        type: String, default:"reader"
     },
     name:{
         type: String

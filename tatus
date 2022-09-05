@@ -1,0 +1,31 @@
+[1mdiff --git a/backend/src/models/regreq.ts b/backend/src/models/regreq.ts[m
+[1mindex 0008865..62ffc81 100644[m
+[1m--- a/backend/src/models/regreq.ts[m
+[1m+++ b/backend/src/models/regreq.ts[m
+[36m@@ -10,7 +10,7 @@[m [mlet RegReq = new Schema({[m
+         type: String[m
+     },[m
+     type:{[m
+[31m-        type: String[m
+[32m+[m[32m        type: String, default:"reader"[m
+     },[m
+     name:{[m
+         type: String[m
+[1mdiff --git a/frontend/src/app/userComponents/registration/registration.component.ts b/frontend/src/app/userComponents/registration/registration.component.ts[m
+[1mindex 15dc0a7..ca4bfcc 100644[m
+[1m--- a/frontend/src/app/userComponents/registration/registration.component.ts[m
+[1m+++ b/frontend/src/app/userComponents/registration/registration.component.ts[m
+[36m@@ -26,11 +26,11 @@[m [mexport class RegistrationComponent implements OnInit {[m
+     if(checkIfAllFieldsAreFilled("registerForm") [m
+     && checkPasswordRegularity(this.req.password)[m
+     && checkPasswordMatching(this.req.password, this.req.passwordConfirmed)){[m
+[31m-           [m
+      this.userServ.regitration(this.req).subscribe((mess:any)=>{[m
+            alert(mess['message'])[m
+[32m+[m[32m           this.ruter.navigate[""][m
+      })[m
+[31m-     this.ruter.navigate[""][m
+[32m+[m[41m     [m
+    }[m
+    [m
+  }[m

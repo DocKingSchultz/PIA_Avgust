@@ -26,11 +26,11 @@ export class RegistrationComponent implements OnInit {
     if(checkIfAllFieldsAreFilled("registerForm") 
     && checkPasswordRegularity(this.req.password)
     && checkPasswordMatching(this.req.password, this.req.passwordConfirmed)){
-           
      this.userServ.regitration(this.req).subscribe((mess:any)=>{
            alert(mess['message'])
+           this.ruter.navigate[""]
      })
-     this.ruter.navigate[""]
+     
    }
    
  }
